@@ -1,6 +1,6 @@
 %% extract result
 clear
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age\metric=predictiveCOD';
+root = '/path/to/your/data\CamCan\KRR parcel size to age\metric=predictiveCOD';
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN','GM','All nets'};
 NetsName = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN','GM','All_nets'};
 iterations = 100;

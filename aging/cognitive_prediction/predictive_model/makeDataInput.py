@@ -7,7 +7,7 @@ originalVariables.rename(columns={'Sub_ID':'CCID'},inplace=True)
 cogTasks = ['Fluid intelligence','Emotion expression recognition','TOT','Face recognition','Hotel','Proverb','Force matching','Motor learning']
 
 for ct in cogTasks:
-    currCtDf = pd.read_excel('data input/筛选的认知量表.xlsx',sheet_name=ct)
+    currCtDf = pd.read_excel('data input/Screening cognitive scale.xlsx',sheet_name=ct)
     newDf =pd.merge(originalVariables,currCtDf,on='CCID',how='inner')
     newDf.to_csv('data input/'+ct+'.csv',index=False)
 
@@ -15,7 +15,7 @@ dfs = {}
 # Read and merge all cognitive task tables
 for ct in cogTasks:
     try:
-        currCtDf = pd.read_excel('data input/筛选的认知量表.xlsx', sheet_name=ct)
+        currCtDf = pd.read_excel('data input/Screening cognitive scale.xlsx', sheet_name=ct)
         # Ensure CCID column exists
         if 'CCID' in currCtDf.columns:
             merged_df = pd.merge(originalVariables[['CCID']], currCtDf, on='CCID', how='inner')

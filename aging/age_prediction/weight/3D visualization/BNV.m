@@ -1,6 +1,6 @@
 %% Visualize with BNV
 clear
-parcellation_dir = 'D:\research\paper\Visualize';
+parcellation_dir = '/path/to/your/data\Visualize';
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 
 for j = 1:8

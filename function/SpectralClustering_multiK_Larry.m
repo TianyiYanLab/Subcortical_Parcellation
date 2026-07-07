@@ -45,7 +45,7 @@ end
 % compute the eigenvectors corresponding to the k smallest
 % eigenvalues
 % warning('off','last');
-% ”√eigÀ„
+% use eig
 [U, value] = eig(L);
 value = diag(value);
 [value,ind] = sort(value);

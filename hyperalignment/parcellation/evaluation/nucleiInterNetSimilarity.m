@@ -1,9 +1,9 @@
 %% Similarity Between Nodal Group Networks (NII Version)
 clear
-root = 'D:\research\Parcellation\hyperalignment\parcellation\results\subcortex_only';
+root = 'path/to/your/data\Parcellation\hyperalignment\parcellation\results\subcortex_only';
 nucleus = {'SUBCORTEX','ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 labels = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-outPath = 'D:\research\Parcellation\hyperalignment\parcellation\evaluation';
+outPath = 'path/to/your/data\Parcellation\hyperalignment\parcellation\evaluation';
 SubcortexInds = {[0:49],[0,1,25,26],[2,3,27,28],[4,5,6,29,30,31],...
     [7,8,9,10,11,32,33,34,35,36],[12,13,37,38],...
     [14,15,16,17,18,19,39,40,41,42,43,44],...

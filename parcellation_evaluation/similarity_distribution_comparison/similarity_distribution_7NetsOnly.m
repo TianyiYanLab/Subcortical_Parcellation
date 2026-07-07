@@ -1,6 +1,6 @@
 clear
-all_perm_similarity_path = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\Robostic\all_perm_similarity';
-out_dir = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\Robostic\similarity_distribution';
+all_perm_similarity_path = 'path/to/your/data\HCP\Robostic\all_perm_similarity';
+out_dir = 'path/to/your/data\HCP\Robostic\similarity_distribution';
 nucleus = {'SUBCORTEX'};
 
 for i = 1:length(nucleus)
@@ -21,7 +21,7 @@ for i = 1:length(nucleus)
 end
 %% histogram
 clear
-distribution_dir = 'D:\research\Parcellation\HCP_Lsym-AVR\Evaluation\Robostic\similarity_distribution';
+distribution_dir = 'path/to/your/data\Parcellation\HCP_Lsym-AVR\Evaluation\Robostic\similarity_distribution';
 nucleus = {'SUBCORTEX'};
 
 for i = 1:length(nucleus)
@@ -46,7 +46,7 @@ end
 
 %% K-S test
 clear
-distribution_dir = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\Robostic\similarity_distribution';
+distribution_dir = 'path/to/your/data\HCP\Robostic\similarity_distribution';
 nucleus = {'SUBCORTEX'};
 
 for i = 1:length(nucleus)

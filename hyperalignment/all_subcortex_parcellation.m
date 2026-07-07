@@ -1,9 +1,9 @@
 %% Spectral clustering with direct label unification and visualization
 clear
-FCS_path = 'F:\hyperalignment\forward_results';
+FCS_path = 'path/to/your/data\hyperalignment\forward_results';
 % FCS_mean_path = 'D:\research\Parcellation\hyperalignment\FCS_mean';
-mask_path = 'D:\research\Parcellation\template\nucleus_mask';
-out_path = 'D:\research\Parcellation\hyperalignment\parcellation\results';
+mask_path = 'path/to/your/data\Parcellation\template\nucleus_mask';
+out_path = 'path/to/your/data\Parcellation\hyperalignment\parcellation\results';
 
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 labels = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};

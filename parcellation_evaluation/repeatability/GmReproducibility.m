@@ -1,5 +1,5 @@
 clear
-GmRandPermParcellationPath = 'D:\research\4pipe comparation\HCP_Lsym-AVR\Ksolution\random group reproducibility\100iterations group parcellation';
+GmRandPermParcellationPath = 'path/to/your/data\4pipe comparation\HCP_Lsym-AVR\Ksolution\random group reproducibility\100iterations group parcellation';
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 k_list = [2,2,3,5,3,6,3];
 

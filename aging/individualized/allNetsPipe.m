@@ -1,6 +1,6 @@
 %% Check that subcortical masks for all networks are the same after resampling
 % clear
-% root = 'D:\research\HCP_parcellation_Lsym-AVR\SWU\Individualized parcellation';
+% root = '/path/to/your/data\SWU\Individualized parcellation';
 % refTemp = niftiread(fullfile(root,'rGM_subcortex.nii'));
 % refTemp(isnan(refTemp))=0;
 % refMskInd = find(refTemp);
@@ -18,7 +18,7 @@
 
 %% Dilate parcellation
 clear
-groupParcellationPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation';
+groupParcellationPath = '/path/to/your/data\CamCan\individualizedParcellation';
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 
 for i = 1:length(nets)
@@ -59,12 +59,12 @@ end
 %% Train SVM
 clear
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-FCS_path = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\FCS';
-load('D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\trainingSet.mat','trainSFiles');
+FCS_path = '/path/to/your/data\CamCan\individualizedParcellation\FCS';
+load('/path/to/your/data\CamCan\individualizedParcellation\trainingSet.mat','trainSFiles');
 for i = 1:length(trainSFiles)
     trainSFiles{i} = fullfile(FCS_path,trainSFiles{i});
 end
-resultPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\TY';
+resultPath = '/path/to/your/data\CamCan\individualizedParcellation\TY';
 
 for i = 1:length(nets)
     currInPath = fullfile(resultPath,nets{i});
@@ -89,11 +89,11 @@ end
 %% Test SVM
 clear
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-load('D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\trainingSet.mat','sFiles','trainSFiles');
+load('/path/to/your/data\CamCan\individualizedParcellation\trainingSet.mat','sFiles','trainSFiles');
 testSFiles = setdiff(sFiles,trainSFiles);
 clear sFiles trainSFiles
-FCS_path = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\FCS';
-resultPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\TY';
+FCS_path = '/path/to/your/data\CamCan\individualizedParcellation\FCS';
+resultPath = '/path/to/your/data\CamCan\individualizedParcellation\TY';
 
 DilThresh = 1;
 for i = 1:length(nets)
@@ -119,7 +119,7 @@ end
 %% Reconstruct individualized parcellation
 clear
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-rootPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation';
+rootPath = '/path/to/your/data\CamCan\individualizedParcellation';
 thresh = 0;
 for n = 1:length(nets)
 probmapPath = fullfile(rootPath,'Results',nets{n},'testedSVM');
@@ -156,7 +156,7 @@ end
 %% Check for NaN values
 clear
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-rootPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation';
+rootPath = '/path/to/your/data\CamCan\individualizedParcellation';
 thresh = 0;
 for n = 1
 probmapPath = fullfile(rootPath,'Results',nets{n},'testedSVM');
@@ -187,7 +187,7 @@ end
 
 %% Remove data for subject 220203
 clear
-path = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\ParcelSize';
+path = '/path/to/your/data\CamCan\individualizedParcellation\ParcelSize';
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 for i = 1:length(nets)
     load(fullfile(path,[nets{i},'.mat']));

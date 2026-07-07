@@ -1,9 +1,9 @@
 %% random group reproducibility
 clear
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
-FCS_path = 'F:\hyperalignment\forward_results';
-load('E:\hyperalignment\perm_list.mat');
-out_path = 'E:\hyperalignment\Ksolution\random group reproducibility';
+FCS_path = 'path/to/your/data\hyperalignment\forward_results';
+load('path/to/your/data\hyperalignment\perm_list.mat');
+out_path = 'path/to/your/data\hyperalignment\Ksolution\random group reproducibility';
 subList = dir(FCS_path);
 subList(1:2,:) = [];
 max_k = 10;

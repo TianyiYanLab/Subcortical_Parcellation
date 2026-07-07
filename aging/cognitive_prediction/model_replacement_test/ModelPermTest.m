@@ -1,5 +1,5 @@
 clear
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to cognition\metric=predictiveCOD';
+root = '/path/to/your/data\CamCan\KRR parcel size to cognition\metric=predictiveCOD';
 iterations = 100;
 cogTasks = {'Fluid intelligence','Emotion expression recognition',...
     'PicturePriming','Face recognition','FamousFaces','Motor learning'};

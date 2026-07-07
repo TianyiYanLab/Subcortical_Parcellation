@@ -1,5 +1,5 @@
 clear
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age\metric=predictiveCOD';
+root = '/path/to/your/data\CamCan\KRR parcel size to age\metric=predictiveCOD';
 OriginalPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age\prediction';
 iterations = 100;
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN','All nets'};

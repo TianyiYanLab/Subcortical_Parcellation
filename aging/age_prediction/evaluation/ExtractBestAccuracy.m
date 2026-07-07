@@ -1,6 +1,6 @@
 %MATLAB cbig
 clear;
-PredictionPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age\metric=predictiveCOD\prediction';
+PredictionPath = '/path/to/your/data\CamCan\KRR parcel size to age\metric=predictiveCOD\prediction';
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN','GM','All nets'};
 replications = 100;
 num_folds=5;

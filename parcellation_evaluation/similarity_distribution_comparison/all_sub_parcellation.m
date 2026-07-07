@@ -1,7 +1,7 @@
 %% Spectral clustering for all subjects, directly unify labels
 clear
-FCS_path = 'D:\research\subcortex_noPCA_FCS_all';
-out_path = 'D:\research\Robostic\all_sub_parcellation';
+FCS_path = 'path/to/your/data\subcortex_noPCA_FCS_all';
+out_path = 'path/to/your/data\Robostic\all_sub_parcellation';
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 warning off
 labels = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};

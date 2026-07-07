@@ -1,9 +1,9 @@
 %% Compute homogeneity
 clear
-msk_dir = 'D:\research\Subcortex\subcortex_only';
-nucleus_dir = 'D:\research\nucleus_mask';
-out_dir = 'D:\research\homogeneity';
-TS_dir = 'D:\research\Data\subcortex_TS';
+msk_dir = 'path/to/your/data\Subcortex\subcortex_only';
+nucleus_dir = 'path/to/your/data\nucleus_mask';
+out_dir = 'path/to/your/data\homogeneity';
+TS_dir = 'path/to/your/data\Data\subcortex_TS';
 
 random_parcel_dir = fullfile(out_dir,'random_parcels');
 labels = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};

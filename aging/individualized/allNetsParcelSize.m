@@ -1,6 +1,6 @@
 %%
 clear
-rootPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation';
+rootPath = '/path/to/your/data\CamCan\individualizedParcellation';
 indiParcPath = fullfile(rootPath,'Results');
 outPath = fullfile(rootPath,'ParcelSize');
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
@@ -25,8 +25,8 @@ end
 
 %% 
 clear
-subInformation = readtable('D:\research\HCP_parcellation_Lsym-AVR\CamCan\subInfo.csv');
-load('D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\trainingSet.mat','sFiles','trainSFiles');
+subInformation = readtable('/path/to/your/data\CamCan\subInfo.csv');
+load('/path/to/your/data\CamCan\individualizedParcellation\trainingSet.mat','sFiles','trainSFiles');
 testSFiles = setdiff(sFiles,trainSFiles);
 
 subID = subInformation.Sub_ID;
@@ -39,4 +39,4 @@ testSFiles = testSFiles(:,1:end-4);
 % testSFiles = str2num(testSFiles);
 testInd = find(ismember(subID,testSFiles));
 testSubInformation=subInformation(testInd,:);
-save(fullfile('D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualizedParcellation\testInformation.mat'));
+save(fullfile('/path/to/your/data\CamCan\individualizedParcellation\testInformation.mat'));

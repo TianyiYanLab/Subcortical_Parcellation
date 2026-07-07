@@ -13,13 +13,13 @@ from mvpa2.datasets.base import Dataset
 # =========================
 # Path configuration (modify paths as needed)
 # =========================
-TS_ROOT = r"E:\function7T_timeseries"
-HA_MODELS_DIR = r"E:\hyperalignment\hyperalignment_conn_schaefer400"  # Directory where final merged pkl.gz files are stored
-OUT_ROOT = r"E:\hyperalignment\forward_results" # Directory to store generated feature vectors and large FC matrices
+TS_ROOT = r"path/to/your/data"
+HA_MODELS_DIR = r"path/to/your/data\hyperalignment\hyperalignment_conn_schaefer400"  # Directory where final merged pkl.gz files are stored
+OUT_ROOT = r"path/to/your/data\hyperalignment\forward_results" # Directory to store generated feature vectors and large FC matrices
 
-CORTEX_INDEX_MAT = r"E:\hyperalignment\cortexIndex.mat"
-SCHAEFER_LABEL_MAT = r"E:\hyperalignment\cortexSchaeferLabel.mat"
-SEVEN_NET_MAT = r"E:\hyperalignment\SevenNet_ind.mat"
+CORTEX_INDEX_MAT = r"path/to/your/data\hyperalignment\cortexIndex.mat"
+SCHAEFER_LABEL_MAT = r"path/to/your/data\hyperalignment\cortexSchaeferLabel.mat"
+SEVEN_NET_MAT = r"path/to/your/data\hyperalignment\SevenNet_ind.mat"
 
 # Spatial parameters
 L_START, L_END = 0, 54216

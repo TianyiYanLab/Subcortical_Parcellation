@@ -2,11 +2,11 @@ function [selected_p,selected_h,best_match,selected_atlas_p] = select_feature_Ne
     nucleus_num = length(nucleus_ind);
     parcel_num = max(cellfun(@max,nucleus_ind));
 
-    [~,p] = partialcorr(Net_based_FCN',y,cov_X);%偏相关，回归掉协变量
+    [~,p] = partialcorr(Net_based_FCN',y,cov_X); % Partial correlation, regressing out covariates
     h = p<alpha;
     h = reshape(h',7,parcel_num,400);
     p = reshape(p',7,parcel_num,400);
-    hp = p.*h;%筛选显著的p值
+    hp = p.*h; % Keep only significant p-values
 
     comparation_h = sum(h,3);
     h_net_nucleus = zeros(7,nucleus_num);
@@ -14,7 +14,7 @@ function [selected_p,selected_h,best_match,selected_atlas_p] = select_feature_Ne
         h_net_nucleus(:,i) = sum(comparation_h(:,nucleus_ind{i}),2);
     end
     
-    comparation_hp = sum(hp,3);%显著的p值在每个网络图谱的每个核团内求400个皮层脑区的和
+    comparation_hp = sum(hp,3); % Sum of significant p-values across 400 cortical parcels for each network and nucleus
     hp_net_nucleus = zeros(7,nucleus_num);
     for i = 1:7
         hp_net_nucleus(:,i) = sum(comparation_hp(:,nucleus_ind{i}),2);

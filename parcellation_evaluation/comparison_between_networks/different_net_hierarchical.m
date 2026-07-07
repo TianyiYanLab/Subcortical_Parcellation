@@ -1,6 +1,6 @@
 %% Hierarchical Clustering of Graph Similarities (Vector Version)
 clear
-root = 'D:\research\Parcellation\HCP_Lsym-AVR\Results\Subcortex\subcortex_only';
+root = 'path/to/your/data\Parcellation\HCP_Lsym-AVR\Results\Subcortex\subcortex_only';
 nucleus = {'Subcortex'};
 labels = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 % out = 'D:\research\论文\图谱间相似度\dendrogram';

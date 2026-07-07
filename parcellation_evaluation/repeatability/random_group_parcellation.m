@@ -2,8 +2,8 @@
 clear
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 individual_consensus_mat_inone_path = 'D:\research\HCP_FCS\subcortex_noPCA_FCS_compressed_inone';
-load('D:\research\HCP_FCS\perm_list.mat');
-out_path_sym = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\All nets reproducibility\100 iterations group parcellation';
+load('path/to/your/data\HCP_FCS\perm_list.mat');
+out_path_sym = 'path/to/your/data\HCP\All nets reproducibility\100 iterations group parcellation';
 k_list = [2,2,3,5,3,6,3];
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 for i = 1:7

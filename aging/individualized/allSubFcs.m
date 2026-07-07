@@ -1,12 +1,12 @@
 %% Whole nucleus similarity
 clear
-TS_path = 'D:\research\Data\camcan\new_filter_Regress\fp_filter_regress';
+TS_path = '/path/to/your/data\Data\camcan\new_filter_Regress\fp_filter_regress';
 sub = dir(fullfile(TS_path,'*.gz'));
-FCS_path = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualized Parcellation\FCS';
-GM_mask = niftiread('D:\research\Parcellation\HCP_Lsym-AVR_resample2CamCan\rGM_cortex_subcortex.nii');
+FCS_path = '/path/to/your/data\CamCan\individualized Parcellation\FCS';
+GM_mask = niftiread('/path/to/your/data\rGM_cortex_subcortex.nii');
 GM_mask(isnan(GM_mask))=0;
 GM_mask(GM_mask~=0)=1;
-sub_mask = niftiread('D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualized Parcellation\rGM_subcortex.nii');
+sub_mask = niftiread('/path/to/your/data\CamCan\individualized Parcellation\rGM_subcortex.nii');
 sub_mask(isnan(sub_mask))=0;
 sub_mask(sub_mask~=0)=1;
 
@@ -31,4 +31,4 @@ for i = 2:length(sub)
     fprintf('Subject %d completed\n',i);
     toc
 end
-save(fullfile('D:\research\HCP_parcellation_Lsym-AVR\CamCan\individualized Parcellation','troubleSub.mat'),'nanSub','allZeroSub')
+save(fullfile('/path/to/your/data\CamCan\individualized Parcellation','troubleSub.mat'),'nanSub','allZeroSub')

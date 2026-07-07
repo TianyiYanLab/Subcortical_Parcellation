@@ -1,6 +1,6 @@
 %% compute all PFM
 clear
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age\metric=predictiveCOD';
+root = '/path/to/your/data\CamCan\KRR parcel size to age\metric=predictiveCOD';
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 replications = 100;
 PfmPath = fullfile(root,'Weights');

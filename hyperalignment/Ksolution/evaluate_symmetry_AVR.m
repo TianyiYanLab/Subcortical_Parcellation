@@ -1,9 +1,9 @@
 %% Symmetry
 clear
-mask_path = 'D:\research\Parcellation\template\nucleus_mask';
-FCS_path = 'F:\hyperalignment\forward_results';
+mask_path = 'path/to/your/data\Parcellation\template\nucleus_mask';
+FCS_path = 'path/to/your/data\hyperalignment\forward_results';
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
-out_path = 'E:\hyperalignment\Ksolution\symmetry';
+out_path = 'path/to/your/data\hyperalignment\Ksolution\symmetry';
 subList = dir(FCS_path);
 subList(1:2,:) = [];
 % labels = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};

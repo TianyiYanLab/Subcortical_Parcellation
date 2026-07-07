@@ -1,5 +1,5 @@
 clear
-cd('D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to cognition');
+cd('/path/to/your/data\CamCan\KRR parcel size to cognition');
 replication = 100;
 % cogTasks = {'Fluid intelligence','Emotion expression recognition','TOT',...
 %     'Face recognition','Hotel','Proverb','Force matching','Motor learning'};

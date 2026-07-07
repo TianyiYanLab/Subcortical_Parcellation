@@ -1,5 +1,5 @@
 %% null eta2
-data = cifti_read('D:\HCP\group\HCP_S1200_GroupAvg_v1\HCP_S1200_997_tfMRI_ALLTASKS_level2_cohensd_hp200_s2_MSMAll.dscalar.nii');
+data = cifti_read('path/to/your/data\HCP\group\HCP_S1200_GroupAvg_v1\HCP_S1200_997_tfMRI_ALLTASKS_level2_cohensd_hp200_s2_MSMAll.dscalar.nii');
 data_subcortex = data.cdata(59413:end,:);
 tasknum = size(data_subcortex,2);
 ijk = [];
@@ -44,7 +44,7 @@ end
 end
 
 
-root = 'F:\CB\代码整理\超对齐分区\task_inhomo';
+root = '\hyperalignment\task_inhomo';
 atlas = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 eta2 = zeros(8, tasknum);
 for i = 1:8

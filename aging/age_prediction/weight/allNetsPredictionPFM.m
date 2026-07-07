@@ -1,7 +1,7 @@
 %% compute all PFM
 clear
 
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age\metric=predictiveCOD';
+root = '/path/to/your/data\CamCan\KRR parcel size to age\metric=predictiveCOD';
 PfmPath = fullfile(root,'Weights');
 
 net = 'All nets';
@@ -19,13 +19,13 @@ for rep = 1:replications
     singleKRR_dir = fullfile(root,'prediction',num2str(rep-1),net);
     score_ind = 1;
     currPfmAllFolds = CBIG_TRBPC_compute_singleKRR_PFM_lrx(singleKRR_dir, score_ind);
-    %所有折权重平均
+    % Average weights across all folds
     PFM_all_folds_mean = mean(currPfmAllFolds,2);
     currNetPfm(:,rep) = PFM_all_folds_mean;
-    %分别提取正负权重
+    % Extract positive and negative weights separately
     posPfm = PFM_all_folds_mean.*(PFM_all_folds_mean>0);
     negPfm = PFM_all_folds_mean.*(PFM_all_folds_mean<0);
-    %将权重向量重组为#nuclei by #net 矩阵
+    % Reshape weight vector into #nuclei by #net matrix
     PfmMat = reshape(PFM_all_folds_mean,48,7);
     posPfmMat = reshape(posPfm,48,7);
     negPfmMat = reshape(negPfm,48,7);
@@ -50,13 +50,13 @@ negMatNucByNetMean = mean(negMatNucByNet,3);
 
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 nucleusNames = {'ACC','AMY','CAU','HIP','GP','PUT','THA'};
-% all,pos,neg
+% all, pos, neg
 MatNucByNetMeanT = array2table(MatNucByNetMean,'VariableNames',nets,'RowNames',nucleusNames);
 writetable(MatNucByNetMeanT,fullfile(PfmPath,'All nets nucbynet mean mat.csv'),'WriteRowNames',true);
 posMatNucByNetMeanT = array2table(posMatNucByNetMean,'VariableNames',nets,'RowNames',nucleusNames);
 writetable(posMatNucByNetMeanT,fullfile(PfmPath,'All nets nucbynet pos mean mat.csv'),'WriteRowNames',true);
 negMatNucByNetMeanT = array2table(negMatNucByNetMean,'VariableNames',nets,'RowNames',nucleusNames);
 writetable(negMatNucByNetMeanT,fullfile(PfmPath,'All nets nucbynet neg mean mat.csv'),'WriteRowNames',true);
-% 原始结果：#roi by #replications 矩阵写入表
+% Raw results: #roi by #replications matrix written to table
 currNetPfmT = array2table(currNetPfm);
 writetable(currNetPfmT,fullfile(PfmPath,'All nets weights.csv'));

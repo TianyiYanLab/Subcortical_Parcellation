@@ -1,8 +1,8 @@
 %% Whole Nucleus Cluster Map Similarity (NII Version)
 clear
-root = 'E:\research\sub_lairuixuan\newResult\new_parcellation';
+root = 'path/to/your/data\newResult\new_parcellation';
 labels = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-out = 'E:\research\sub_lairuixuan\newResult\figure2\group_similar_2C';
+out = 'path/to/your/data\newResult\figure2\group_similar_2C';
 
 in = root;
 Dice = ones(length(labels),length(labels));
@@ -32,9 +32,9 @@ close
 
 %% 全核团图谱间相似度（nii版）和聚类树画一起的版本
 clear
-root = 'D:\research\Parcellation\HCP_Lsym-AVR\Results\Subcortex\subcortex_only';
+root = 'path/to/your/data\Parcellation\HCP_Lsym-AVR\Results\Subcortex\subcortex_only';
 labels = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-out = 'D:\research\论文\图谱间相似度';
+out = 'path/to/your/data';
 
 in = root;
 Dice = ones(length(labels),length(labels));

@@ -1,5 +1,5 @@
 clear
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to cognition';
+root = '/path/to/your/data\CamCan\KRR parcel size to cognition';
 iterations = 100;
 N_perms = 1000;
 cogTasks = {'Fluid intelligence','Emotion expression recognition',...

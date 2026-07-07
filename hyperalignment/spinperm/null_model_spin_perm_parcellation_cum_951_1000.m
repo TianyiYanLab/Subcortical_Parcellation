@@ -1,14 +1,14 @@
 %% non-parallel
 clear
 nucNames = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
-FC_path = 'F:\hyperalignment\forward_results';
+FC_path = 'path/to/your/data\hyperalignment\forward_results';
 
 % Read the random partition and index info
-load('D:\research\Parcellation\hyperalignment\spinperm\spin_permutations.mat');
-load('F:\hyperalignment\cortexIndex.mat');
-load('D:\research\Parcellation\hyperalignment\spinperm\nucStartsEnds.mat');
+load('path/to/your/data\Parcellation\hyperalignment\spinperm\spin_permutations.mat');
+load('path/to/your/data\hyperalignment\cortexIndex.mat');
+load('path/to/your/data\Parcellation\hyperalignment\spinperm\nucStartsEnds.mat');
 
-parcellation_path = 'D:\research\Parcellation\hyperalignment\spinperm\parcellation';
+parcellation_path = 'path/to/your/data\Parcellation\hyperalignment\spinperm\parcellation';
 
 k_list = [2,2,3,5,2,6,5];
 sub = dir(FC_path);

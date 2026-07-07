@@ -14,10 +14,10 @@ from mvpa2.algorithms.hyperalignment import Hyperalignment
 # =========================
 # paths
 # =========================
-TS_ROOT = r"F:\function7T_timeseries"
-CORTEX_INDEX_MAT = r"D:\research\Parcellation\hyperalignment\cortexIndex.mat"
-SCHAEFER_LABEL_MAT = r"D:\research\Parcellation\hyperalignment\cortexSchaeferLabel.mat"
-OUT_DIR = r"F:\hyperalignment\hyperalignment_conn_schaefer400"
+TS_ROOT = r"path/to/your/data\function7T_timeseries"
+CORTEX_INDEX_MAT = r"path/to/your/data\Parcellation\hyperalignment\cortexIndex.mat"
+SCHAEFER_LABEL_MAT = r"path/to/your/data\Parcellation\hyperalignment\cortexSchaeferLabel.mat"
+OUT_DIR = r"path/to/your/data\hyperalignment\hyperalignment_conn_schaefer400"
 
 # cortex column ranges
 L_START, L_END = 0, 54216

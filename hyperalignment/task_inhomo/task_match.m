@@ -1,5 +1,5 @@
 %% ciftiRow
-data = cifti_read('D:\HCP\group\HCP_S1200_GroupAvg_v1\HCP_S1200_997_tfMRI_ALLTASKS_level2_cohensd_hp200_s2_MSMAll.dscalar.nii');
+data = cifti_read('path/to/your/data\HCP\group\HCP_S1200_GroupAvg_v1\HCP_S1200_997_tfMRI_ALLTASKS_level2_cohensd_hp200_s2_MSMAll.dscalar.nii');
 data_subcortex = data.cdata(59413:end,:);
 ijk = [];
 for i = 3:21
@@ -19,7 +19,7 @@ ciftiRow(in) = rowVol(sub2ind(d2, v2(in,1)+1, v2(in,2)+1, v2(in,3)+1));
 
 %% task inhomogeneity
 atlas = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-root = 'F:\CB\代码整理\超对齐分区\task_inhomo';
+root = 'path/to/your/data/hyperalignment\task_inhomo';
 tasknum = size(data_subcortex,2);
 inhomo_all = [];
 sd_task_all = [];

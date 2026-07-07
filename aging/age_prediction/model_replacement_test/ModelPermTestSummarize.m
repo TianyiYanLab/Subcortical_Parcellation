@@ -1,5 +1,5 @@
 clear
-root = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age';
+root = '/path/to/your/data\CamCan\KRR parcel size to age';
 iterations = 100;
 N_perms = 1000;
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN','All nets'};

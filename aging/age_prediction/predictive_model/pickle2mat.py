@@ -1,7 +1,7 @@
 import os
 import pickle
 import scipy.io
-rootPath = r'D:\research\HCP_parcellation_Lsym-AVR\CamCan\Autogluon_prediction\prediction'
+rootPath = r'/path/to/your/data\CamCan\Autogluon_prediction\prediction'
 outPath = 'prediction'
 for rep in range(100):
     with open(os.path.join(rootPath,str(rep),'splits.pkl'), 'rb') as f:

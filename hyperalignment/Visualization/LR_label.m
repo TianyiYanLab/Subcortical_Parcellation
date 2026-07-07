@@ -1,7 +1,7 @@
 %% First, make the left and right labels symmetric
 clear
-original_parcellation_path = 'D:\research\Parcellation\HCP\Results\Subcortex\subcortex_only';
-new_parcellation_path = 'D:\research\论文\图谱可视化';
+original_parcellation_path = 'path/to/your/data\Parcellation\HCP\Results\Subcortex\subcortex_only';
+new_parcellation_path = 'path/to/your/data';
 labels = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 
 for i = 1:length(labels)
@@ -16,7 +16,7 @@ end
 
 %% Visualize using BNV
 clear
-parcellation_dir = 'D:\research\论文\图谱可视化';
+parcellation_dir = 'path/to/your/data';
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 
 for j = 1:8

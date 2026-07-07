@@ -1,15 +1,15 @@
 %% non-parallel
 clear
-addpath(genpath('/home/data/data//hyperalignment/spinperm/'))
+addpath(genpath('path/to/your/data//hyperalignment/spinperm/'))
 nucNames = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
-FC_path = '/home/data/data//hyperalignment/forward_results/';
+FC_path = 'path/to/your/data//hyperalignment/forward_results/';
 
 % Read the random partition and index info
-load('/home/data/data//hyperalignment/spinperm/spin_permutations.mat');
-load('/home/data/data//hyperalignment/spinperm/cortexIndex.mat');
-load('/home/data/data//hyperalignment/spinperm/nucStartsEnds.mat');
+load('path/to/your/data//hyperalignment/spinperm/spin_permutations.mat');
+load('path/to/your/data//hyperalignment/spinperm/cortexIndex.mat');
+load('path/to/your/data//hyperalignment/spinperm/nucStartsEnds.mat');
 
-parcellation_path = '/home/data/data//hyperalignment/spinperm/new_parcellation';
+parcellation_path = 'path/to/your/data//hyperalignment/spinperm/new_parcellation';
 
 k_list = [2,2,3,5,3,6,3];
 sub = dir(FC_path);

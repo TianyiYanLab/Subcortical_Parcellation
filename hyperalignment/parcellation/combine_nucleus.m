@@ -1,11 +1,11 @@
 %% All nuclei combine
 clear
-parcellation_dir = 'D:\research\Parcellation\hyperalignment\parcellation\results';
+parcellation_dir = 'path/to/your/data\Parcellation\hyperalignment\parcellation\results';
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-Schaefer400_file = 'D:\research\Parcellation\template\Schaefer2018_400Parcels_7Networks_order_FSLMNI152_1.6mm.nii';
-nucleiMaskPath = 'D:\research\Parcellation\template\nucleus_mask';
-out_dir = 'D:\research\Parcellation\hyperalignment\parcellation\results';
+Schaefer400_file = 'path/to/your/data\Parcellation\template\Schaefer2018_400Parcels_7Networks_order_FSLMNI152_1.6mm.nii';
+nucleiMaskPath = 'path/to/your/data\Parcellation\template\nucleus_mask';
+out_dir = 'path/to/your/data\Parcellation\hyperalignment\parcellation\results';
 [~,GM_mask] = read(Schaefer400_file);
 cortex_label = GM_mask(GM_mask>0);
 for i = 1:length(nets)
@@ -28,7 +28,7 @@ for i = 1:length(nets)
     end
     mat2nii(subcortex_parcellation,fullfile(out_dir,'subcortex_only',[nets{i},'_subcortex.nii']),size(subcortex_parcellation),32,Schaefer400_file);
 
-    % ¼ÓÉÏSchaefer400
+    % add Schaefer400
     subcortex_parcellation(GM_mask>0) = cortex_label + cum_ind;
     mat2nii(subcortex_parcellation,fullfile(out_dir,'cortex_subcortex',[nets{i},'_cortex_subcortex.nii']),size(subcortex_parcellation),32,Schaefer400_file);
 end

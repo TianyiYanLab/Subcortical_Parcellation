@@ -1,6 +1,6 @@
 function relabeled_R = symmetrise_label(L,R)
-% L:×óÄÔnii¾ØÕó
-% R:ÓÒÄÔnii¾ØÕó
+% L: Left brain NIfTI matrix
+% R: Right brain NIfTI matrix
     Lsym = zeros(size(L));
     ind_L = find(L~=0);
     label_L = L(ind_L);

@@ -1,5 +1,5 @@
 clear
-cd('D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to age');
+cd('/path/to/your/data\CamCan\KRR parcel size to age');
 replication = 100;
 example = readtable(fullfile('data input','GM.csv'));
 for rep = 0:replication-1

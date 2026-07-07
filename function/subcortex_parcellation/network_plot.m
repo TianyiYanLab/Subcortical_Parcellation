@@ -1,23 +1,23 @@
 function network_plot(net, x_net_index, y_net_index, x_legends, y_legends,graph_title)
-    % 计算唯一的网络索引
+    % Compute unique network indices
     unique_x_nets = unique(x_net_index);
     unique_y_nets = unique(y_net_index);
 
-    % 根据网络索引生成分割线位置
+    % Generate separator positions based on network indices
     x_sep = [0; cell2mat(arrayfun(@(id) max(find(x_net_index == id)), unique_x_nets, 'UniformOutput', false))];
     y_sep = [0; cell2mat(arrayfun(@(id) max(find(y_net_index == id)), unique_y_nets, 'UniformOutput', false))];
     
-    % 绘制网络矩阵
+    % Plot network matrix
     imagesc(net); hold on;
     
-    % 绘制x轴上的分割线
+    % Draw separation lines on x-axis
     x = repmat(x_sep', length(y_sep), 1)+0.5;
     y = repmat(y_sep, 1, length(x_sep))+0.5;
     mesh(x, y, zeros(size(x)), 'EdgeColor', 'k', 'FaceAlpha', 0, 'LineWidth', 0.5);
     view(2);
     grid off
     hold on;
-    % 绘制条形图
+    % Draw bars
     x_n_node = size(net,2);
     y_n_node = size(net,1);
     x_extend = x_n_node / 5;
@@ -69,6 +69,3 @@ function network_plot(net, x_net_index, y_net_index, x_legends, y_legends,graph_
     axis off
 
 end
-
-    
-    

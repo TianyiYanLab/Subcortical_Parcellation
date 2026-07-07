@@ -1,5 +1,5 @@
 clear
-RepParcellationPath = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\All nets reproducibility\100 iterations group parcellation';
+RepParcellationPath = 'path/to/your/data\HCP\All nets reproducibility\100 iterations group parcellation';
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 

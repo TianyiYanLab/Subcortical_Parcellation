@@ -1,6 +1,6 @@
 %MATLAB cbig
 clear;
-PredictionPath = 'D:\research\HCP_parcellation_Lsym-AVR\CamCan\KRR parcel size to cognition\metric=predictiveCOD\prediction';
+PredictionPath = '/path/to/your/data\CamCan\KRR parcel size to cognition\metric=predictiveCOD\prediction';
 CogTasks = {'Fluid intelligence','Emotion expression recognition',...
     'PicturePriming','Face recognition','FamousFaces','Motor learning'};
 ScoreInd = [1,1,1,1,1,1];

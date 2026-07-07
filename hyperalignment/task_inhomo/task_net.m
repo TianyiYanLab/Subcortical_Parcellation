@@ -1,4 +1,4 @@
-root = 'F:\CB\代码整理\超对齐分区\task_inhomo';
+root = 'path/to/your/data/hyperalignment\task_inhomo';
 atlas = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 eta2 = zeros(8, tasknum);
 for i = 1:8

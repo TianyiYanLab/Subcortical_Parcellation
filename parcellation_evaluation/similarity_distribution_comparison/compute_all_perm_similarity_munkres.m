@@ -1,8 +1,8 @@
 %% Compute similarity across all permutations
 clear
-load('D:\research\HCP_parcellation_Lsym-AVR\HCP\Robostic\perm_list');
-relabeled_parcellation_path = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\Robostic\relabeled_all_sub_parcellation';
-out_dir = 'D:\research\HCP_parcellation_Lsym-AVR\HCP\Robostic\all_perm_similarity';
+load('path/to/your/data\HCP\Robostic\perm_list');
+relabeled_parcellation_path = 'path/to/your/data\HCP\Robostic\relabeled_all_sub_parcellation';
+out_dir = 'path/to/your/data/HCP\Robostic\all_perm_similarity';
 nucleus = {'SUBCORTEX'};
 
 for j = 1:length(nucleus)

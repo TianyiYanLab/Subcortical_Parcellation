@@ -1,7 +1,7 @@
 %% Standardize all subject labels
 clear
-all_sub_parcellation_path = 'D:\research\Robostic\all_sub_parcellation';
-out_dir = 'D:\research\Robostic\relabeled_all_sub_parcellation';
+all_sub_parcellation_path = 'path/to/your/data\Robostic\all_sub_parcellation';
+out_dir = 'path/to/your/data\Robostic\relabeled_all_sub_parcellation';
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 warning off
 sub_list = dir(all_sub_parcellation_path);
@@ -36,9 +36,9 @@ for i = 1:length(nucleus)
 end
 %% combine_all_nucleus_parcellation
 clear
-relabeled_all_sub_parcellation_dir = 'D:\research\Robostic\relabeled_all_sub_parcellation';
+relabeled_all_sub_parcellation_dir = 'path/to/your/data\Robostic\relabeled_all_sub_parcellation';
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
-out_dir = 'D:\research\Robostic\relabeled_all_sub_parcellation';
+out_dir = 'path/to/your/data\Robostic\relabeled_all_sub_parcellation';
 
 cum = 0;
 all_nucleus_parcellation = [];
