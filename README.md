@@ -4,7 +4,7 @@ MATLAB and Python analysis code for connectivity-based hyperalignment, group and
 
 ## Requirements and data
 
-- MATLAB R2019b (including Statistics and Machine Learning and Image Processing toolboxes); Python 3.8 with NumPy, SciPy, pandas, h5py, scikit-learn and PyMVPA (`mvpa2`).
+- MATLAB R2018b (including Statistics and Machine Learning and Image Processing toolboxes); Python 3.11 with NumPy, SciPy, pandas, h5py, scikit-learn and PyMVPA (`mvpa2`).
 - External code used by these scripts: **CBIG**, **LIBSVM**, **Tian et al. (2020) Subcortex Functions** (including the spectral-clustering, image-I/O and subcortical utilities called in the MATLAB scripts), `cifti-matlab`, a `munkres` implementation, and **BrainNet Viewer** for the optional visualization script. These dependencies are referenced by function name in the scripts and are not copied into this repository.
 - Input datasets: [HCP](https://www.humanconnectome.org/study/hcp-young-adult), [Cam-CAN](https://opendata.mrc-cbu.cam.ac.uk/projects/camcan/) and [SALD](https://fcon_1000.projects.nitrc.org/indi/retro/sald.html). Obtain them from their providers and follow the applicable access and data-use terms. Imaging data and participant-level results are not included here.
 
