@@ -8,8 +8,6 @@ MATLAB and Python analysis code for connectivity-based hyperalignment, group and
 - External code used by these scripts: **CBIG**, **LIBSVM**, **Tian et al. (2020) Subcortex Functions** (including the spectral-clustering, image-I/O and subcortical utilities called in the MATLAB scripts), `cifti-matlab`, a `munkres` implementation, and **BrainNet Viewer** for the optional visualization script. These dependencies are referenced by function name in the scripts and are not copied into this repository.
 - Input datasets: [HCP](https://www.humanconnectome.org/study/hcp-young-adult), [Cam-CAN](https://opendata.mrc-cbu.cam.ac.uk/projects/camcan/) and [SALD](https://fcon_1000.projects.nitrc.org/indi/retro/sald.html). Obtain them from their providers and follow the applicable access and data-use terms. Imaging data and participant-level results are not included here.
 
-There is no configuration file. The scripts use paths under this repository's `data/` and `results/` directories, resolved from their own file locations. Put input files at the relative paths used by the scripts and keep generated outputs under `results/`. Both directories contain only placeholders in Git; their data and results are ignored. In MATLAB, add `matlab/utils/` and the external toolboxes to the search path before running analysis scripts. Python scripts can be run directly.
-
 ## Analysis order and outputs
 
 | Step | Code | Main intermediate output |
@@ -20,8 +18,6 @@ There is no configuration file. The scripts use paths under this repository's `d
 | 4. Prediction and interpretation | `matlab/prediction/`, `python/age/`, `python/cognitive/`, `matlab/age/`, `matlab/cognitive/` | Feature tables, repeated splits, CBIG KRR results and feature-weight summaries |
 | 5. Network/task validation | `matlab/evaluation/`, `matlab/spin_test/`, `matlab/task_validation/` | Network Dice matrices, spin parcellations and task eta-squared summaries |
 | 6. Corrected inference | `python/statistics/` | Nadeau–Bengio corrected comparison table and 21-pair spin-test table, each with BH-FDR `q` values |
-
-Input filenames and intermediate output directories appear at the top of each script and in the `data/` and `results/` paths used there. In particular, the CBIG KRR scripts read their `setup.mat` input arrays, and the SVM scripts call the named external functions. Run stages in the order above using the appropriate prepared input arrays. Optional homogeneity-null evaluation is under `matlab/evaluation/`.
 
 ## Script guide
 
@@ -83,4 +79,4 @@ python python/statistics/run_statistics.py spin --scores data/spin_observed.csv 
 python python/statistics/run_statistics.py nb --scores data/run_level_scores.csv --comparisons data/comparisons.csv --output results/nb_fdr.csv
 ```
 
-Use the manuscript citation when sharing results, and cite the datasets and external toolboxes as required by their providers. No license is assigned to this repository until the authors choose one.
+Use the manuscript citation when sharing results, and cite the datasets and external toolboxes as required by their providers. 
