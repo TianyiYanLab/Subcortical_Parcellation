@@ -9,7 +9,7 @@ indiParcPath = fullfile(rootPath,'TY');
 outPath = fullfile(rootPath,'ParcelSize');
 if ~exist(outPath,'dir'); mkdir(outPath); end
 nets = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-regionNum = 50;
+regionNum = 48;
 
 for i = 1:length(nets)
     tic

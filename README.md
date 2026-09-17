@@ -1,10 +1,10 @@
 # Network-specific subcortical parcellation and healthy aging
 
-MATLAB and Python analysis code for connectivity-based hyperalignment, group and individual subcortical parcellation, age/cognition prediction, network comparisons, spin tests, and task-fMRI validation. The current seven-network solution uses `K = [2, 2, 3, 5, 2, 6, 5]`: 25 parcels per hemisphere, **50 parcels in total**. The scripts are organized by analysis step; they are research code, not a software package.
+MATLAB and Python analysis code for connectivity-based hyperalignment, group and individual subcortical parcellation, age/cognition prediction, network comparisons, spin tests, and task-fMRI validation. The current seven-network solution uses `K = [2, 2, 3, 5, 3, 6, 3]`: 24 parcels per hemisphere, **48 parcels in total** (accumbens: 2, amygdala: 2, caudate: 3, hippocampus: 5, pallidum: 3, putamen: 6, thalamus: 3 per hemisphere). The scripts are organized by analysis step; they are research code, not a software package.
 
 ## Requirements and data
 
-- MATLAB R2018b (including Statistics and Machine Learning and Image Processing toolboxes); Python 3.11 with NumPy, SciPy, pandas, h5py, scikit-learn and PyMVPA (`mvpa2`).
+- MATLAB R2019b (including Statistics and Machine Learning and Image Processing toolboxes); Python 3.8 with NumPy, SciPy, pandas, h5py, scikit-learn and PyMVPA (`mvpa2`).
 - External code used by these scripts: **CBIG**, **LIBSVM**, **Tian et al. (2020) Subcortex Functions** (including the spectral-clustering, image-I/O and subcortical utilities called in the MATLAB scripts), `cifti-matlab`, a `munkres` implementation, and **BrainNet Viewer** for the optional visualization script. These dependencies are referenced by function name in the scripts and are not copied into this repository.
 - Input datasets: [HCP](https://www.humanconnectome.org/study/hcp-young-adult), [Cam-CAN](https://opendata.mrc-cbu.cam.ac.uk/projects/camcan/) and [SALD](https://fcon_1000.projects.nitrc.org/indi/retro/sald.html). Obtain them from their providers and follow the applicable access and data-use terms. Imaging data and participant-level results are not included here.
 
@@ -13,7 +13,7 @@ MATLAB and Python analysis code for connectivity-based hyperalignment, group and
 | Step | Code | Main intermediate output |
 | --- | --- | --- |
 | 1. Hyperalignment | `python/hyperalignment/` | Parcel-wise mappers and aligned connectivity fingerprints |
-| 2. K selection and group parcellation | `matlab/k_selection/`, `matlab/group_parcellation/` | Reproducibility/symmetry summaries and 50-label group atlases |
+| 2. K selection and group parcellation | `matlab/k_selection/`, `matlab/group_parcellation/` | Reproducibility/symmetry summaries and 48-label group atlases |
 | 3. Individualization | `matlab/individualization/` | Subject fingerprints, SVM probability maps, individual labels and parcel sizes |
 | 4. Prediction and interpretation | `matlab/prediction/`, `python/age/`, `python/cognitive/`, `matlab/age/`, `matlab/cognitive/` | Feature tables, repeated splits, CBIG KRR results and feature-weight summaries |
 | 5. Network/task validation | `matlab/evaluation/`, `matlab/spin_test/`, `matlab/task_validation/` | Network Dice matrices, spin parcellations and task eta-squared summaries |
@@ -52,7 +52,6 @@ MATLAB and Python analysis code for connectivity-based hyperalignment, group and
 | `matlab/cognitive/evaluation/summarize_acc.m` | Summarize cognition-prediction scores across runs. |
 | `matlab/cognitive/weight/all_nets_prediction_pfm.m` | Aggregate cognition feature weights by network and nucleus. |
 | `matlab/evaluation/network_similarity.m` | Calculate Dice similarity between network-specific atlases. |
-| `matlab/evaluation/generate_homogeneity_null_parcels.m` | Generate optional null parcels for homogeneity analysis. |
 | `matlab/spin_test/generate_null_parcellations.m` | Build network spin-null parcellations. |
 | `matlab/task_validation/evaluate_task_eta_squared.m` | Compare task activation eta-squared for observed and null parcellations. |
 | `python/statistics/corrected_tests.py` | Implement Nadeau–Bengio corrected resampled t tests, empirical spin P values and BH-FDR. |
@@ -70,7 +69,7 @@ MATLAB and Python analysis code for connectivity-based hyperalignment, group and
 
 ## Parameters and statistical inputs
 
-Hyperalignment uses `ALPHA = 1.0` and Schaefer-400 parcel labels in the supplied code. Group K is given above. Individualization dilates labels by one voxel (`DilThresh = 1`) and reconstructs 50 parcels. Age and cognition KRR run 100 repetitions; the cognition setup specifies five inner folds, a correlation kernel and the lambda grid defined in `matlab/cognitive/predictive_model/setup.m`. The age script sets its lambda grid in `matlab/age/predictive_model/setup.m`. SVM training/testing uses the external functions called by `matlab/individualization/run_individualization.m`; their model-specific options are set by those functions.
+Hyperalignment uses `ALPHA = 1.0` and Schaefer-400 parcel labels in the supplied code. Group K is given above. Individualization dilates labels by one voxel (`DilThresh = 1`) and reconstructs 48 parcels. Age and cognition KRR run 100 repetitions; the cognition setup specifies five inner folds, a correlation kernel and the lambda grid defined in `matlab/cognitive/predictive_model/setup.m`. The age script sets its lambda grid in `matlab/age/predictive_model/setup.m`. SVM training/testing uses the external functions called by `matlab/individualization/run_individualization.m`; their model-specific options are set by those functions.
 
 The spin code is configured for 1,000 rotations. `python/statistics/run_statistics.py spin` expects `pair,observed` rows for the 21 unique unordered pairs of `VIS, SMN, DAN, VAN, LIM, FPN, DMN`, followed by a null CSV with those pair names as columns and one rotation per row. It computes left-tailed empirical P values and BH-FDR q values. The `nb` mode expects one score row per repeated run plus an explicit `model_a,model_b` comparison CSV; it applies the Nadeau–Bengio correction and BH-FDR. Its default test/train ratio is 0.25. Example commands:
 

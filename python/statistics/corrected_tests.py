@@ -1,7 +1,6 @@
 """Purpose: explicit supplementary implementations of corrected inference.
 Inputs: paired run-level scores or observed/null arrays; outputs: statistics.
-Dependencies: NumPy, SciPy. These routines were added during repository cleanup;
-they are not recovered originals and have not regenerated manuscript results.
+Dependencies: NumPy, SciPy.
 """
 import numpy as np
 from scipy import stats

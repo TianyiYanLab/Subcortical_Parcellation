@@ -30,7 +30,7 @@ for i = 1:nRand
 atlasnii = parcels_random_all(:,:,:,i);
 % voxel -> parcel id, same mapping logic as real data
 voxLabel = zeros(size(data_subcortex,1),1);
-for j = 1:50
+for j = 1:48
 r = unique(ciftiRow(atlasnii==j));  r = r(r>0);   % unique for deduplication
 voxLabel(r) = j;
 end
@@ -56,7 +56,7 @@ eta2 = zeros(8, tasknum);
 for i = 1:8
 atlasnii = niftiread(fullfile(root,[atlas{i} '_subcortex.nii']));
 voxLabel = zeros(size(data_subcortex,1),1);          % each 2mm CIFTI row -> parcel id
-for j = 1:50
+for j = 1:48
 r = unique(ciftiRow(atlasnii==j)); r = r(r>0);
 voxLabel(r) = j;                                 % boundary overlaps are rare; can switch to majority vote if needed
 end

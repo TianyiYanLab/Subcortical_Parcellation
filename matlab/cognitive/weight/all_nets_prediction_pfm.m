@@ -10,11 +10,11 @@ if ~exist(PfmPath,'dir'); mkdir(PfmPath); end
 cogTasks = {'Fluid intelligence','Emotion expression recognition',...
     'PicturePriming','Face recognition','FamousFaces','Motor learning'};
 replications = 100;
-nucleusInd = {[1,2,26,27],[3,4,28,29],[5,6,7,30,31,32],[8:12,33:37],...
-    [13:14,38:39],[15:20,40:45],[21:25,46:50]};
+nucleusInd = {[1,2,25,26],[3,4,27,28],[5,6,7,29,30,31],[8:12,32:36],...
+    [13:15,37:39],[16:21,40:45],[22:24,46:48]};
 scoreInd = [1,1,1,1,1,1]; % EER metric changed from HappyAcc to TotalAcc
 for ti = 1:length(cogTasks)
-    currTaskPfm = zeros(50*7,replications);
+    currTaskPfm = zeros(48*7,replications);
     MatNucByNet = zeros(7,7,replications);
     posMatNucByNet = zeros(7,7,replications);
     negMatNucByNet = zeros(7,7,replications);
@@ -29,9 +29,9 @@ for ti = 1:length(cogTasks)
         posPfm = PFM_all_folds_mean.*(PFM_all_folds_mean>0);
         negPfm = PFM_all_folds_mean.*(PFM_all_folds_mean<0);
         % Reshape weight vector into #nuclei by #net matrix
-        PfmMat = reshape(PFM_all_folds_mean,50,7);
-        posPfmMat = reshape(posPfm,50,7);
-        negPfmMat = reshape(negPfm,50,7);
+        PfmMat = reshape(PFM_all_folds_mean,48,7);
+        posPfmMat = reshape(posPfm,48,7);
+        negPfmMat = reshape(negPfm,48,7);
         currMean = zeros(7,7);
         currPosMean = zeros(7,7);
         currNegMean = zeros(7,7);

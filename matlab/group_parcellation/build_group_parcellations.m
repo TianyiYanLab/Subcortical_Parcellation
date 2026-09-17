@@ -10,7 +10,7 @@ out_path = repo_path('results/group_parcellation');
 
 nucleus = {'ACCUMBENS','AMYGDALA','CAUDATE','HIPPOCAMPUS','PALLIDUM','PUTAMEN','THALAMUS'};
 labels = {'GM','VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
-k_list = [2,2,3,5,2,6,5];
+k_list = [2,2,3,5,3,6,3];
 
 % Warnings left enabled for reproducibility diagnostics.
 subList = dir(FCS_path);

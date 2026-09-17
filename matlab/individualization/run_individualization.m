@@ -137,9 +137,9 @@ sub(1:2) = [];
 
 for i = 1:length(sub)
     tic
-    probmapAllRegion = zeros(length(voxelInd),50);
+    probmapAllRegion = zeros(length(voxelInd),48);
 %     if exist(fullfile(outPath,[sub(i).name,'.mat']));continue;end
-    for j = 1:50
+    for j = 1:48
         load(fullfile(probmapPath,sub(i).name,['region',num2str(j),'_probmap.mat']));
         currParcProb = y_img(voxelInd);
         probmapAllRegion(:,j) = currParcProb;

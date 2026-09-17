@@ -8,12 +8,12 @@ root = repo_path('results/prediction/age');
 nets = {'VIS','SMN','DAN','VAN','LIM','FPN','DMN'};
 replications = 100;
 PfmPath = fullfile(root,'Weights');
-nucleusInd = {[1,2,26,27],[3,4,28,29],[5,6,7,30,31,32],[8:12,33:37],...
-    [13:14,38:39],[15:20,40:45],[21:25,46:50]};
+nucleusInd = {[1,2,25,26],[3,4,27,28],[5,6,7,29,30,31],[8:12,32:36],...
+    [13:15,37:39],[16:21,40:45],[22:24,46:48]};
 nucleusNames = {'ACC','AMY','CAU','HIP','GP','PUT','THA'};
 
 for net = 1:length(nets)
-    currNetPfm = zeros(50,replications);
+    currNetPfm = zeros(48,replications);
     currNetPfmMeanAcrossNucleus = zeros(7,replications);
     currNetPfmPosMeanAcrossNucleus = zeros(7,replications);
     currNetPfmNegMeanAcrossNucleus = zeros(7,replications);

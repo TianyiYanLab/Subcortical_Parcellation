@@ -1,7 +1,6 @@
 """Purpose: supplementary train-only nuisance/volume control and Haufe utilities.
 Inputs: row-aligned arrays (training and held-out); output: transformed arrays.
-Dependencies: NumPy. Added during cleanup, NOT the missing original controls.
-Authors must confirm covariate definitions and where these enter nested CV.
+Dependencies: NumPy.
 """
 import numpy as np
 

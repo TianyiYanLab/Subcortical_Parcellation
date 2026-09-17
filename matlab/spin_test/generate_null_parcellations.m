@@ -14,7 +14,7 @@ load(repo_path('data/templates/nucStartsEnds.mat'));
 
 parcellation_path = repo_path('results/spin_test/parcellations');
 
-k_list = [2,2,3,5,2,6,5];
+k_list = [2,2,3,5,3,6,3];
 sub = dir(FC_path);
 sub(1:2) = [];
 
